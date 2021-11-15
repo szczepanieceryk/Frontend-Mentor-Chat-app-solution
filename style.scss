@@ -1,0 +1,255 @@
+//import custom scss varaibles
+@import 'custom';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: $font-size;
+    font-family: $body-font;
+}
+.app-wrapper{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    text-align: center;
+    background-color:  $light-grayish-violet;
+
+    .magenta-background,.light-violet-background{
+        position: absolute;
+        height: 70vh;
+        width: 50vw;
+        max-width: 450px;
+        z-index: 1;
+    }
+    .magenta-background{
+        top: 0;
+        left: 0;
+        border-radius: 0 0 100% 0px;
+        background: linear-gradient(to left, $light-magenta, $light-violet);
+    }
+    .light-violet-background{
+        bottom: 0;
+        right: 0;
+        background-color:  hsl(288, 100%, 99%);
+        border-radius: 250px 20px 0 0;
+    }
+    .content{
+        margin: 0 auto;
+        max-width: 360px;
+        z-index: 2;
+        .text{
+            margin: 30px auto 50px;
+            line-height: 1.5;
+            display: block;
+            color: $dark-grayish-violet;
+        }
+    }
+    .phone-mockup{
+        margin: 80px auto 50px;
+        position: relative;
+        width: 80%;
+        max-width: 360px;
+        border: 10px solid $white;
+        box-shadow: 10px 10px 20px 8px #ddd;
+        border-radius: 20px;
+        z-index: 2;
+        .white-bar{
+            position: absolute;
+            top:-10px;
+            left: 70px;
+            height: 30px;
+            width: 60%;
+            background-color: $white;
+            border-radius: 50px;
+        }
+        .user-top-bar{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 0 15px;
+            position: relative;
+            border-radius: 20px 20px 5px 5px;
+            color:$light-grayish-violet;
+            background: linear-gradient(to left, $light-magenta, $light-violet);
+
+            .user-image{
+                max-height: 25px;
+                border-radius: 50%;
+                border: 1px solid $white;
+                left: 40px;
+            }
+            .more-icon,.back-arr,.user-image{
+                position: absolute;
+                right: 15px;
+                top:50px
+            }
+            .user{
+                position:relative;
+                left: 80px;
+               .available{
+                    color: $pale-violet;
+                }
+            }
+            .back-arr{
+               left:15px;
+            }
+        }
+        .chat-wrapper{
+            position: relative;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0 0 15px 15px;
+            background-color: $light-grayish-violet;
+            .chat-right{
+               margin: 10px 0;
+            }
+            .message{
+                margin-bottom: 10px;
+                padding: 10px;
+                max-width: 200px;
+                font-size: 10px;
+                border-radius: 10px 10px 10px 2px;
+                background-color: #ddd;
+            }
+            .message.send{
+                text-align: left;
+                color: $moderate-violet;
+            }
+            .message.received{
+                margin-left: 130px;
+                text-align: right;
+                border-radius: 10px 10px 2px 10px;
+                color: $desaturated-dark-violet;
+                background-color: $white;
+                box-shadow: 0px 5px 10px 0px #ddd;
+            }
+            .message.img{
+                max-width: 200px;
+                background-color: none;
+                color: none;
+                img{
+                    margin: 0 2px;
+                    max-width: 50px;
+                    border-radius: 15px;
+                }
+            }
+            .message-input{
+                position: relative;
+                padding: 12px 15px;
+                border-radius: 15px;
+                border: none;
+                width: 100%;
+            }
+            // .input-arr{
+            //     position: absolute;
+            //     top:10px;
+            //     right: 80px;
+            // }
+            .order-option{
+                margin-bottom: 15px;
+                padding: 15px;
+                width: 80%;
+                position: relative;
+                text-align: left;
+                border-radius: 15px 15px 15px 5px;
+                color:$light-grayish-violet;
+                color:$pale-violet;
+                background: linear-gradient(to left, $light-violet, $light-magenta);
+
+                .walk-time{
+                    margin-left: 30px;
+                }
+                .price{
+                    position: absolute;
+                    right: 20px;
+                    color: $white;
+                }
+            }
+            .radio-btn{
+                position: absolute;
+                left:10px
+            }
+        }
+    }
+    .attribution { 
+        margin: 0 auto;
+        padding-bottom:20px ;
+        flex-basis: 100%;
+        font-size: 11px;
+        text-align: center;
+        z-index: 2;
+        a{
+            color: hsl(228, 45%, 44%);
+        }
+     }
+}
+
+@media screen and(min-width:481px){
+    .app-wrapper{
+        justify-content: space-around;
+        align-items: center;
+        background-color: $white;
+    }
+}
+
+@media screen and(min-width:769px){
+    .app-wrapper{
+        .magenta-background,.light-violet-background{
+            width: 30vw;
+        }
+        .content{
+            text-align: left;
+        }
+    }
+}
+
+@media screen and(min-width:1025px){
+    .app-wrapper{
+        margin: 0 auto;
+        .content,.phone-mockup{
+            flex-basis: 50%;
+        }
+        .content{
+            margin: 0;
+        }
+        .phone-mockup{
+            margin: 80px 0 50px 220px;           
+        }
+        .magenta-background,.light-violet-background{
+            height: 90vh;
+            width: 35vw;
+        }
+        .magenta-background{
+            border-radius: 0 0 250px 150px;
+            left: -50px;
+        }
+        
+        .attribution { 
+            margin: 40px auto 20px;
+          
+        }
+    }
+}
+
+@media screen and(min-width:1400px){
+    .app-wrapper{
+        .phone-mockup{
+            margin: 80px 0 50px 270px;        
+        }
+        .content{
+            margin-right: 300px;
+        }
+    }
+}
+
+@media screen and(min-width:1600px){
+    .app-wrapper{
+        .phone-mockup{
+            margin: 80px 0 50px 220px;           
+        }
+      
+    }
+}
